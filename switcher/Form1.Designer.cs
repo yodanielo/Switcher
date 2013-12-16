@@ -33,11 +33,11 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toggleAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disableAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enableAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.toggleAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuIcon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,12 +59,19 @@
             this.enableAllToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuIcon.Name = "contextMenuStrip1";
-            this.menuIcon.Size = new System.Drawing.Size(130, 98);
+            this.menuIcon.Size = new System.Drawing.Size(153, 120);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // toggleAllToolStripMenuItem
+            // 
+            this.toggleAllToolStripMenuItem.Name = "toggleAllToolStripMenuItem";
+            this.toggleAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.toggleAllToolStripMenuItem.Text = "Toggle All";
+            this.toggleAllToolStripMenuItem.Click += new System.EventHandler(this.toggleAllToolStripMenuItem_Click);
             // 
             // disableAllToolStripMenuItem
             // 
@@ -86,7 +93,7 @@
             // 
             this.salirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salirToolStripMenuItem.Image")));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -99,13 +106,6 @@
             this.label1.Size = new System.Drawing.Size(96, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "It Works!";
-            // 
-            // toggleAllToolStripMenuItem
-            // 
-            this.toggleAllToolStripMenuItem.Name = "toggleAllToolStripMenuItem";
-            this.toggleAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.toggleAllToolStripMenuItem.Text = "Toggle All";
-            this.toggleAllToolStripMenuItem.Click += new System.EventHandler(this.toggleAllToolStripMenuItem_Click);
             // 
             // Form1
             // 

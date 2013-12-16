@@ -8,37 +8,37 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.Layout;
+using switcher.controles;
 
 namespace switcher.clases
 {
-    public class adaptadores
+    public class adaptadoresProvider
     {
-
-        public Dictionary<string, interfaceStatus> interfaces { get; set; }
-
-        public List<String> init()
+        private static List<InfoAdapter> interfaces = new List<InfoAdapter>();
+        public static List<InfoAdapter> getIstances()
         {
-            interfaces = new Dictionary<string,interfaceStatus>();
 
-            List<String> values = new List<String>();
             interfaces.Clear();
+
             ManagementClass mc;
             mc = new ManagementClass("Win32_NetworkAdapter");
+            //mc = new ManagementClass("MSFT_NetAdapter");
             ManagementObjectCollection moc = mc.GetInstances();
             foreach (ManagementObject mo in moc)
             {
+                //if (!string.IsNullOrEmpty((string)mo["NetConnectionID"]))
                 if (!string.IsNullOrEmpty((string)mo["NetConnectionID"]))
                 {
-                    interfaces.Add((string)mo["NetConnectionID"],new interfaceStatus()
-                    {
-                        nombre = (string)mo["NetConnectionID"],
-                        descripcion = (string)mo["Description"],
-                        estado = (bool)mo["NetEnabled"]
+                    interfaces.Add(new InfoAdapter() { 
+                        descripcion=(string)mo["Description"],
+                        estado=(Boolean)mo["NetEnabled"],
+                        nombre=(string)mo["NetConnectionID"],
+                        objeto=mo
                     });
                 }
             }
 
-            return values;
+            return interfaces;
         }
     }
 }
